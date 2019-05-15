@@ -50,18 +50,13 @@ class CameraVC: BaseVC {
     private func recognize(with image: UIImage, mode: G8PageSegmentationMode, completion: (_ result: String)->Void) {
         guard let tesseract: G8Tesseract = G8Tesseract.init(language: "eng") else { return }
 //        tesseract.charBlacklist = "qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJIKOLP"
-        tesseract.charWhitelist = "0123456789"
-        tesseract.engineMode = .tesseractOnly
+        tesseract.charWhitelist = "0123456789" //whiteList & blackList不支援正則
+        tesseract.engineMode = .tesseractOnly //whiteList & blackList僅支援此模式
         tesseract.pageSegmentationMode = mode
         tesseract.image = image
         tesseract.maximumRecognitionTime = 20
         tesseract.recognize()
-        guard let txt = tesseract.recognizedText?// else { return }
-            .replacingOccurrences(of: "\n", with: "") else { return }
-//            .replacingOccurrences(of: "I", with: "1")
-//            .replacingOccurrences(of: "O", with: "0")
-//            .replacingOccurrences(of: "o", with: "0")
-//            .replacingOccurrences(of: "i", with: "1") else { return }
+        guard let txt = tesseract.recognizedText?.replacingOccurrences(of: "\n", with: "") else { return }
         completion(txt)
     }
 }

@@ -35,6 +35,7 @@ class TrackingVideoVC: BaseVideoVC {
         var boundingBox = box.boundingBox
         boundingBox.origin.y = 1 - boundingBox.origin.y
         guard let rect = previewView.videoPreviewLayer?.layerRectConverted(fromMetadataOutputRect: boundingBox) else { return CALayer() }
+        
         let layer = CALayer()
         layer.frame = rect
         layer.borderWidth = 1.0

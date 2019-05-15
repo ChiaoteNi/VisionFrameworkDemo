@@ -21,6 +21,21 @@ class TextVideoVC: BaseVideoVC {
     }
     
     // MARK: - delegate func.
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        let orientation: CGImagePropertyOrientation = .init(UIDevice.current.orientation, position: cameraPosition)
+        
+        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation, options: [:])
+        let textRequest = VNDetectTextRectanglesRequest(completionHandler: self.handleRectangles)
+        textRequest.reportCharacterBoxes = true
+        
+        do {
+            try imageRequestHandler.perform([textRequest])
+        } catch {
+            print(error)
+        }
+    }
+    
     private func handleRectangles(request: VNRequest, error: Error?) {
         guard let observations = request.results as? [VNTextObservation] else { return }
         DispatchQueue.main.async() {
@@ -36,21 +51,6 @@ class TextVideoVC: BaseVideoVC {
                     self.drawBox(with: self.getRectLayer(box: characterBox, with: size))
                 }
             }
-        }
-    }
-    
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let orientation: CGImagePropertyOrientation = .init(UIDevice.current.orientation, position: cameraPosition)
-        
-        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation, options: [:])
-        let textRequest = VNDetectTextRectanglesRequest(completionHandler: self.handleRectangles)
-        textRequest.reportCharacterBoxes = true
-        
-        do {
-            try imageRequestHandler.perform([textRequest])
-        } catch {
-            print(error)
         }
     }
 }

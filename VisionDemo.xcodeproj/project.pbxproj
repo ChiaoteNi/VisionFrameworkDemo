@@ -81,8 +81,7 @@
 			children = (
 				84B835562289D191005891AF /* Base */,
 				84B835572289D1BB005891AF /* Views */,
-				84B835512289A754005891AF /* TextVideoVC.swift */,
-				84B835532289B6AD005891AF /* FaceVideoVC.swift */,
+				84E3FE49228C347E006BF444 /* VideoVC */,
 				84F9CD8E228AB87800F797D7 /* TrackingVideoVC.swift */,
 				844934B32287E06E0095BCFC /* CameraVC.swift */,
 			);
@@ -121,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				844934B52287F3AA0095BCFC /* BaseVC.swift */,
-				84BD83462287308D00938192 /* BaseVideoVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -156,12 +154,22 @@
 			isa = PBXGroup;
 			children = (
 				84BD83442287308D00938192 /* AppDelegate.swift */,
-				844934BA22880D320095BCFC /* Extensions */,
 				844934B72287F4850095BCFC /* VCs */,
 				844934B82287F55E0095BCFC /* SBs */,
 				844934B92287F56D0095BCFC /* Resources */,
+				844934BA22880D320095BCFC /* Extensions */,
 			);
 			path = VisionDemo;
+			sourceTree = "<group>";
+		};
+		84E3FE49228C347E006BF444 /* VideoVC */ = {
+			isa = PBXGroup;
+			children = (
+				84BD83462287308D00938192 /* BaseVideoVC.swift */,
+				84B835512289A754005891AF /* TextVideoVC.swift */,
+				84B835532289B6AD005891AF /* FaceVideoVC.swift */,
+			);
+			path = VideoVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
