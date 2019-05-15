@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYB-TZ-L1Z">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6tL-4F-TWH">
+            <objects>
+                <viewController id="BYB-TZ-L1Z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DQ4-4a-Asa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-q7-Diz">
+                                <rect key="frame" x="161" y="89.5" width="92" height="717"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-PI-o5c">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="173.5"/>
+                                        <state key="normal" title="文字照片辨識"/>
+                                        <connections>
+                                            <segue destination="tA2-d9-zVW" kind="show" id="hdF-Zl-XZ0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-0l-llD">
+                                        <rect key="frame" x="0.0" y="181.5" width="92" height="173"/>
+                                        <state key="normal" title="文字影像辨識"/>
+                                        <connections>
+                                            <segue destination="aWf-cG-fRZ" kind="show" id="Kvm-Gq-IAT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX9-lc-zF2">
+                                        <rect key="frame" x="0.0" y="362.5" width="92" height="173"/>
+                                        <state key="normal" title="人臉影像辨識"/>
+                                        <connections>
+                                            <segue destination="CW2-AJ-LR4" kind="show" id="zzY-ar-JUD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjT-kH-yvp" userLabel="Tracking">
+                                        <rect key="frame" x="16.5" y="543.5" width="59" height="173.5"/>
+                                        <state key="normal" title="Tracking"/>
+                                        <connections>
+                                            <segue destination="CZm-Tr-7fw" kind="show" id="gKm-ME-hh7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3lh-q7-Diz" firstAttribute="height" secondItem="DQ4-4a-Asa" secondAttribute="height" multiplier="0.8" id="5vn-Q8-cGc"/>
+                            <constraint firstItem="3lh-q7-Diz" firstAttribute="centerX" secondItem="DQ4-4a-Asa" secondAttribute="centerX" id="FLF-ni-aB3"/>
+                            <constraint firstItem="3lh-q7-Diz" firstAttribute="centerY" secondItem="DQ4-4a-Asa" secondAttribute="centerY" id="hzw-il-FEb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HIG-nC-7BO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWV-Fd-x39" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="385"/>
+        </scene>
+        <!--Text VideoVC-->
+        <scene sceneID="7hH-05-lE2">
+            <objects>
+                <viewController id="aWf-cG-fRZ" customClass="TextVideoVC" customModule="VisionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xp5-bq-2iv"/>
+                        <viewControllerLayoutGuide type="bottom" id="CxK-jJ-7Rn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m7Z-6I-IZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y34-Ey-chv" customClass="VideoView" customModule="VisionDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y34-Ey-chv" firstAttribute="leading" secondItem="m7Z-6I-IZZ" secondAttribute="leading" id="R2H-Fz-CI1"/>
+                            <constraint firstItem="Y34-Ey-chv" firstAttribute="top" secondItem="m7Z-6I-IZZ" secondAttribute="top" id="Uq4-7B-SwM"/>
+                            <constraint firstItem="Y34-Ey-chv" firstAttribute="bottom" secondItem="CxK-jJ-7Rn" secondAttribute="top" id="cNA-dV-SBV"/>
+                            <constraint firstAttribute="trailing" secondItem="Y34-Ey-chv" secondAttribute="trailing" id="s63-Jq-WEF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iMt-wo-pac"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="Y34-Ey-chv" id="Qz4-Gf-jQk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaG-bk-I7T" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="702"/>
+        </scene>
+        <!--CameraVC-->
+        <scene sceneID="qoI-AA-Ysq">
+            <objects>
+                <viewController id="tA2-d9-zVW" customClass="CameraVC" customModule="VisionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gyq-56-4fZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccS-bw-6WS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="771.5"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9YQ-Eq-Qew">
+                                <rect key="frame" x="184" y="791.5" width="46" height="50.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mO8-vD-6Gd">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-dS-omk">
+                                        <rect key="frame" x="0.0" y="20.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="takePicture" destination="tA2-d9-zVW" eventType="touchUpInside" id="wH2-YB-Vrj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0WV-kR-UXT" firstAttribute="bottom" secondItem="9YQ-Eq-Qew" secondAttribute="bottom" constant="20" id="DtG-Go-ArS"/>
+                            <constraint firstItem="9YQ-Eq-Qew" firstAttribute="top" secondItem="ccS-bw-6WS" secondAttribute="bottom" constant="20" id="Itf-Uj-VTx"/>
+                            <constraint firstItem="9YQ-Eq-Qew" firstAttribute="centerX" secondItem="gyq-56-4fZ" secondAttribute="centerX" id="Ud4-2x-HEz"/>
+                            <constraint firstItem="ccS-bw-6WS" firstAttribute="top" secondItem="gyq-56-4fZ" secondAttribute="top" id="ffE-Dz-jMU"/>
+                            <constraint firstItem="ccS-bw-6WS" firstAttribute="leading" secondItem="0WV-kR-UXT" secondAttribute="leading" id="gEj-ZE-wKe"/>
+                            <constraint firstItem="0WV-kR-UXT" firstAttribute="trailing" secondItem="ccS-bw-6WS" secondAttribute="trailing" id="koH-7B-nVJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0WV-kR-UXT"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputImgView" destination="ccS-bw-6WS" id="Cdo-nz-xWX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ET-iy-adf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.57971014492762" y="38.839285714285715"/>
+        </scene>
+        <!--Face VideoVC-->
+        <scene sceneID="cnO-ss-tgm">
+            <objects>
+                <viewController id="CW2-AJ-LR4" customClass="FaceVideoVC" customModule="VisionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GdL-NM-DYw"/>
+                        <viewControllerLayoutGuide type="bottom" id="pTp-VW-Yeo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ilJ-ad-Pe2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tl-cz-bJl" customClass="VideoView" customModule="VisionDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9tl-cz-bJl" firstAttribute="bottom" secondItem="pTp-VW-Yeo" secondAttribute="top" id="Akk-I2-O7g"/>
+                            <constraint firstAttribute="trailing" secondItem="9tl-cz-bJl" secondAttribute="trailing" id="KeI-70-lZ0"/>
+                            <constraint firstItem="9tl-cz-bJl" firstAttribute="leading" secondItem="ilJ-ad-Pe2" secondAttribute="leading" id="j23-VM-ljy"/>
+                            <constraint firstItem="9tl-cz-bJl" firstAttribute="top" secondItem="ilJ-ad-Pe2" secondAttribute="top" id="kmq-54-1sP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pAd-yL-k38"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="9tl-cz-bJl" id="6Aw-AT-4Vz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6k-gT-mAq" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="1360"/>
+        </scene>
+        <!--Tracking VideoVC-->
+        <scene sceneID="2jh-A8-5bs">
+            <objects>
+                <viewController id="CZm-Tr-7fw" customClass="TrackingVideoVC" customModule="VisionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WVi-jj-IJb"/>
+                        <viewControllerLayoutGuide type="bottom" id="jNI-oA-XgU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B4O-6W-cYX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wga-L5-sme" customClass="VideoView" customModule="VisionDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wga-L5-sme" firstAttribute="bottom" secondItem="jNI-oA-XgU" secondAttribute="top" id="OYY-2D-m4z"/>
+                            <constraint firstItem="wga-L5-sme" firstAttribute="top" secondItem="B4O-6W-cYX" secondAttribute="top" id="P0X-KG-0RL"/>
+                            <constraint firstAttribute="trailing" secondItem="wga-L5-sme" secondAttribute="trailing" id="Qph-c3-e31"/>
+                            <constraint firstItem="wga-L5-sme" firstAttribute="leading" secondItem="B4O-6W-cYX" secondAttribute="leading" id="wNs-VZ-OAk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9GF-Yt-0En"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="wga-L5-sme" id="EmP-Ln-peM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXa-H8-5lj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="2019"/>
+        </scene>
+        <!--Tracking VideoVC-->
+        <scene sceneID="axa-Bt-Ckb">
+            <objects>
+                <viewController id="pgd-Op-BBb" customClass="TrackingVideoVC" customModule="VisionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WsA-gz-wae"/>
+                        <viewControllerLayoutGuide type="bottom" id="nvQ-3Z-JPh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4K3-cu-ssz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRC-kg-6jC" customClass="VideoView" customModule="VisionDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hRC-kg-6jC" firstAttribute="leading" secondItem="4K3-cu-ssz" secondAttribute="leading" id="1gf-hc-At7"/>
+                            <constraint firstAttribute="trailing" secondItem="hRC-kg-6jC" secondAttribute="trailing" id="Hza-Re-Km2"/>
+                            <constraint firstItem="hRC-kg-6jC" firstAttribute="bottom" secondItem="nvQ-3Z-JPh" secondAttribute="top" id="nq6-Gf-N2P"/>
+                            <constraint firstItem="hRC-kg-6jC" firstAttribute="top" secondItem="4K3-cu-ssz" secondAttribute="top" id="uTf-bk-OrL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RmI-tf-SG3"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="hRC-kg-6jC" id="rrc-F2-mxh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6X-1h-ZqB" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="2019"/>
+        </scene>
+    </scenes>
+</document>
